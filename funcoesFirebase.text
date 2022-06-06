@@ -1,0 +1,20 @@
+.on() - cria um OUVINTE que ficará o tempo todo ouvindo a fofoca. RECEBE 3 PARÂMETROS:
+
+        1) "value"
+        2) ação que será feita
+        3) ação que será feita caso ele não consiga ler o FB
+
+
+
+
+.ref() - salva o endereço, a referência que queremos acessar no FB. RECEBE A REFERÊNCIA
+
+
+
+
+.set() - cria uma referência DO ZERO, totalmente nova. RECEBE OBJ JSON
+
+
+
+
+.update() - atualiza uma referência que já existe no FB. RECEBE OBJ JSON
