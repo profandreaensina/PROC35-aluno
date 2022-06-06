@@ -1,37 +1,38 @@
-var bola, database;
+var bola;
+var database;
 var pos;
 
 
 function setup(){
-  database = firebase.database();
   createCanvas(500,500);
 
   bola = createSprite(250,250,20,20);
   bola.shapeColor = "red";
+  
+  //01. guardar referencia do FB na variável
 
-
-  var posFB = database.ref('bola/position');
-  console.log("DEU " + posFB)
-  posFB.on("value", lerPosicaoFb, mostrarErro);
+  var posFB = database.ref(/* adiciona a referencia da info que quer acessar no FB*/);
+  posFB.on("value" /* , nomeFunçãoChamadaQuandoHáMudança, nomeDaFunçãoChamadaSeHouverErro */);
+  
 }
 
 function draw(){
   background("black");
   
     if(keyDown(LEFT_ARROW)){
-      atualizarPosicaoFb(-10,0);
+      
     }
-    else if(keyDown(RIGHT_ARROW)){
-      atualizarPosicaoFb(10,0);
+    if(keyDown(RIGHT_ARROW)){
+      
     }
-    else if(keyDown(UP_ARROW)){
-      atualizarPosicaoFb(0,-10);
+    if(keyDown(UP_ARROW)){
+      
     }
-    else if(keyDown(DOWN_ARROW)){
-      atualizarPosicaoFb(0,+10);
+    if(keyDown(DOWN_ARROW)){
+      
     }
-    drawSprites();
   
+    drawSprites();  
 }
 
 function lerPosicaoFb(data){
@@ -41,14 +42,14 @@ function lerPosicaoFb(data){
 }
 
 function atualizarPosicaoFb(x, y){
-  database.ref('bola/position').set({
+  database.ref(/* nome da referencia da info que quer acessar no FB */).set({
     'x': pos.x + x ,
     'y': pos.y + y
   })
 }
 
 function mostrarErro(){
-  console.log("Error in writing to the database");
+  console.log("Erro ao acessar o banco de dados");
 }
 
 
