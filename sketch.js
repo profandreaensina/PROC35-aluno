@@ -43,8 +43,8 @@ function lerPosicaoFb(data){
 
 function atualizarPosicaoFb(x, y){
   database.ref(/* nome da referencia da info que quer acessar no FB */).set({
-    'x': pos.x + x ,
-    'y': pos.y + y
+    'x': bola.x + x ,
+    'y': bola.y + y
   })
 }
 
